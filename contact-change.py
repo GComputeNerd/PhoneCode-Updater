@@ -7,7 +7,6 @@ with open('contacts.vcf') as f: # Open Contacts File
         if entry[0:3] == 'TEL': # This line has a phone number
             n = entry.find(':') + 1 # Index of where number starts from
             if (entry[n] != '+'): # Number doesn't have an area code
-                num = entry[n:]
                 entry = entry[:n] + ar + entry[n:] # Add area code to number
                 data[i] = entry
 
